@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sathvika's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: { extend: {} },
+    }
+  </script>
+  <style>
+    /* Smooth bounce animation for arrow with easing */
+    @keyframes bounceSmooth {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(15px); }
+    }
+    .animate-bounce-smooth {
+      animation: bounceSmooth 2s infinite;
+    }
+
+    /* Image hover overlay */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card img {
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .project-card:hover .overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0f2c] text-white font-sans">
+
+  <!-- Hero Section -->
+  <section class="min-h-[120vh] flex flex-col justify-center items-center text-center px-6 relative">
+    <h1 class="text-7xl font-extrabold mb-6 drop-shadow-lg">
+      Sathvika <br />PORTFOLIO
+    </h1>
+    <p class="text-2xl max-w-2xl mb-8 drop-shadow-md">
+      Passionate about ML, AI, and Data Analytics
+    </p>
+    <div class="flex gap-6 flex-wrap justify-center mb-12">
+      <a href="mailto:sathvikaprabahar3108@gmail.com" class="hover:underline text-lg font-medium">Email</a>
+      <a href="https://www.linkedin.com/in/sathvika-prabahar" class="hover:underline text-lg font-medium">LinkedIn</a>
+      <a href="https://github.com/sathvika318" class="hover:underline text-lg font-medium">GitHub</a>
+    </div>
+
+    <!-- Scroll Down Arrow -->
+    <a href="#projects" class="absolute bottom-6 animate-bounce-smooth text-white text-5xl drop-shadow-lg">
+      &#8595;
+    </a>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold mb-6">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Project 1 -->
+      <div class="bg-[#111633] p-6 shadow-lg rounded-lg hover:shadow-xl transition project-card">
+        <div class="relative">
+          <img src="images/brain_tumor.jpg" alt="Brain Tumor Detection" class="mb-4 rounded-lg w-full h-48 object-cover">
+          <div class="overlay rounded-lg"></div>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="https://github.com/sathvika318/Efficientnet" target="_blank" class="hover:underline">
+            Brain Tumor Detection using EfficientNet
+          </a>
+        </h3>
+        <p>
+          Built and trained CNN (EfficientNetB0) to classify MRI scans. Achieved accuracy comparable to radiological benchmarks.
+        </p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-[#111633] p-6 shadow-lg rounded-lg hover:shadow-xl transition project-card">
+        <div class="relative">
+          <img src="images/loan_prediction.jpg" alt="Loan Prediction System" class="mb-4 rounded-lg w-full h-48 object-cover">
+          <div class="overlay rounded-lg"></div>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="https://github.com/sathvika318/Loan_Prediction" target="_blank" class="hover:underline">
+            Loan Prediction System
+          </a>
+        </h3>
+        <p>
+          Developed ML model to predict loan approval. Compared Logistic Regression, Random Forest and XGBoost for best performance.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Download Resume Button -->
+    <div class="mt-12 text-center">
+      <a href="Sathvika_Resume.pdf" download class="bg-[#1e3a8a] hover:bg-[#3b59c0] text-white px-6 py-3 rounded-lg shadow-md transition">
+        Download Resume
+      </a>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 border-t border-[#1e3a8a]">
+    <p>&copy; 2025 Sathvika</p>
+  </footer>
+</body>
+</html>
